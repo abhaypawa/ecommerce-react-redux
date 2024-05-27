@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useSearchParams } from 'react-router-dom';
@@ -19,7 +18,6 @@ function generateId() {
 const Form = () => {
     const dispatch = useDispatch();
     const products = useSelector((state) => state.products);
-    const [productToEdit, setProductToEdit] = useState(null);  // Declare state setter function correctly
     const [searchParams] = useSearchParams();
     const id = searchParams.get('id');
     const navigate = useNavigate();
@@ -95,10 +93,9 @@ const Form = () => {
         if (id) {
             const product = products?.find(_ => _.id === id);
             console.log("product : ", product);
-            setProductToEdit(product);
             setFormData(product);
         }
-    }, [id, products, setProductToEdit]);  // Include products and setProductToEdit in the dependency array
+    }, [id, products]);
 
     return(
      <div>
@@ -141,7 +138,7 @@ const Form = () => {
                 {errors.price && <span className="error">{errors.price}</span>}
             </div>
             <div className="form-group">
-                <label htmlFor="imageUrl">imageUrl:</label>
+                <label htmlFor="imageUrl">Image URL:</label>
                 <input
                     type="text"
                     id="imageUrl"
@@ -158,6 +155,5 @@ const Form = () => {
     </div>
     )
 }
-
 
 export default Form;
