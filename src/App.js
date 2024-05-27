@@ -1,4 +1,3 @@
-// Import required dependencies
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -29,7 +28,7 @@ function App() {
             set_product_list(Dummy_product_list);
             dispatch(fetchProducts(Dummy_product_list));
         }
-    }, [dispatch]);
+    }, [dispatch, product_list, set_product_list]);  // Added product_list and set_product_list as dependencies
 
     return <>
         <ToastContainer />

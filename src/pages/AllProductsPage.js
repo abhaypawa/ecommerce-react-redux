@@ -71,11 +71,11 @@ const AllProductsPage = () => {
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
                 {productList.map((product) => {
 
-                    const isInCart = cart?.find(_ => _.id == product?.id);
+                    const isInCart = cart?.find(_ => _.id === product?.id);  // Changed == to ===
                     return <div key={product.id} className="product">
 
                         <div className='product_left'>
-                            <img src={product.imageUrl} alt={product.name} />
+                            <img src={product.imageUrl} alt={product.name} />  // Added alt attribute
                             <div>
                                 <p className="product-name">{product.name}</p>
                                 <p className="product-price">Rs.{product.price}</p>

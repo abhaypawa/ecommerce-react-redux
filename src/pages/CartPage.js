@@ -22,7 +22,7 @@ const CartPage = () => {
                         <li
                             style={{ display: "flex", gap: 30, marginTop: 20 }}
                             key={item.id}>
-                            <img style={{ height: 100, width: 80 }} src={item.imageUrl} />
+                            <img style={{ height: 100, width: 80 }} src={item.imageUrl} alt='' />
                             <div>
                                 <p>Title : {item.name}</p>
                                 <p>Price : {item.price}</p>
