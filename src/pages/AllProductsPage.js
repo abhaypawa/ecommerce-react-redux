@@ -75,7 +75,7 @@ const AllProductsPage = () => {
                     return <div key={product.id} className="product">
 
                         <div className='product_left'>
-                            <img src={product.imageUrl} alt={product.name} />  // Added alt attribute
+                            <img src={product.imageUrl} alt={product.name} />  
                             <div>
                                 <p className="product-name">{product.name}</p>
                                 <p className="product-price">Rs.{product.price}</p>
